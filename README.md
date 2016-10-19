@@ -6,7 +6,7 @@ A GNOME Shell extension to open [Terminix](https://github.com/gnunn1/terminix) i
 
 ## Installation
 
-###  Frome Gnome Shell Extensions Page
+###  From Gnome Shell Extensions Page
 
 The easiest way to install this extension is via the official [Gnome Shell Extensions](https://extensions.gnome.org/) resource page: <https://extensions.gnome.org/extension/1123/terminix-dropdown/>
 
