@@ -1,5 +1,5 @@
 {
-  "description": "Open Terminix in Quake mode .\n Credit to extensions.gnome.org/extension/877/empathy-button/",
+  "description": "Open Terminix in Quake mode .\n Credit to extensions.gnome.org/extension/877/empathy-button/ .\n Add keyboard shortcut (F10)",
   "name": "Terminix DropDown",
   "shell-version": [
     "3.14",
