@@ -21,5 +21,11 @@ $ mv gnome-shell-TerminixDropdown $HOME/.local/share/gnome-shell/extensions/Term
 
 restart GNOME Shell (`Alt+F2 r Enter`) and enable the extension through gnome-tweak-tool.
 
+## Configuring
+
+### Custom hotkey 
+
+Default shortcut is (<kbd>F10</kbd>) , to setup custom shortcut key edit **schemas/org.gnome.shell.extensions.terminix-dropdown.gschema.xml** schema file and compile with `glib-compile-schemas .` inside the directory .
+
 **note:** Make sure you have terminix installed!
 

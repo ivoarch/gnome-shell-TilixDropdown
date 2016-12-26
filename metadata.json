@@ -8,7 +8,9 @@
     "3.20",
     "3.22"
   ],
-  "url": "",  
+  "url": "https://github.com/ivoarch/gnome-shell-TerminixDropdown",  
   "uuid": "TerminixDropdown@ivkuzev@gmail.com",
-  "version": 1
+  "version": 2,
+  "settings-schema": "org.gnome.shell.extensions.terminix-dropdown"
 }
+

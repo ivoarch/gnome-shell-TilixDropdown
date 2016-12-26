@@ -1,0 +1,8 @@
+<schemalist>
+  <schema id="org.gnome.shell.extensions.terminix-dropdown" path="/org/gnome/shell/extensions/terminix-dropdown/">
+    <key type="as" name="key">
+      <default><![CDATA[['F10']]]></default>
+      <summary>Key to start terminix in quake mode</summary>
+    </key>
+  </schema>
+</schemalist>
