@@ -25,7 +25,9 @@ restart GNOME Shell (`Alt+F2 r Enter`) and enable the extension through gnome-tw
 
 ### Custom hotkey 
 
-Default shortcut is (<kbd>F10</kbd>) , to setup custom shortcut key edit **schemas/org.gnome.shell.extensions.terminix-dropdown.gschema.xml** schema file and compile with `glib-compile-schemas .` inside the directory .
+Change keyboard shortcut key via extension settings from gnome-tweak-tool .
 
-**note:** Make sure you have terminix installed!
+## Note 
+
+Make sure you have terminix installed!
 

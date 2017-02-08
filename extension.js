@@ -1,4 +1,4 @@
-const ExtensionUtils = imports.misc.extensionUtils;
+// Library imports
 const Gio = imports.gi.Gio;
 const Lang = imports.lang;
 const Main = imports.ui.main;
@@ -6,14 +6,19 @@ const Meta = imports.gi.Meta;
 const Shell = imports.gi.Shell;
 const St = imports.gi.St;
 const Tweener = imports.ui.tweener;
-const Util = imports.misc.util;
+
+// Extension imports
+const Utils   = imports.misc.extensionUtils.getCurrentExtension().imports.utils;
+const mySettings = Utils.getSettings();
+
+// Globals
+const key_bindings = {
+    'key': function(){
+        _startTerminix();
+    }
+};
 
 let text, button;
-
-const KEY_SETTING_NAME = "key";
-
-// 3.14 compatibility
-const ShellActionMode = (Shell.ActionMode)?Shell.ActionMode:Shell.KeyBindingMode;
 
 function init(extensionMeta) {
     button = new St.Bin({
@@ -41,36 +46,50 @@ function _startTerminix() {
     }
 }
 
-function loadSettings() {
-    let extension = ExtensionUtils.getCurrentExtension();
-
-    let schemaSource = Gio.SettingsSchemaSource.new_from_directory(
-        extension.dir.get_child('schemas').get_path(),
-        Gio.SettingsSchemaSource.get_default(),
-        false);
-
-    let schema = schemaSource.lookup(extension.metadata['settings-schema'], true);
-    if (!schema)
-        throw new Error('Schema ' + schema + ' could not be found');
-
-    return new Gio.Settings({ settings_schema: schema });
-}
-
 function enable() {
-    let settings = loadSettings();
-    Main.wm.addKeybinding(
-        KEY_SETTING_NAME,
-        settings,
-        Meta.KeyBindingFlags.NONE,
-        //Shell.ActionMode.NORMAL,
-        //Shell.KeyBindingMode.NORMAL,
-        ShellActionMode.NORMAL,
-        _startTerminix);
-    let children = Main.panel._rightBox.get_children();
+    let key;
+    for (key in key_bindings) {
+        if (Main.wm.addKeybinding && Shell.ActionMode) { // introduced in 3.16
+            Main.wm.addKeybinding(
+                key,
+                mySettings,
+                Meta.KeyBindingFlags.NONE,
+                Shell.ActionMode.NORMAL,
+                key_bindings[key]
+            );
+        }
+        else if (Main.wm.addKeybinding && Shell.KeyBindingMode) { // introduced in 3.7.5
+            Main.wm.addKeybinding(
+                key,
+                mySettings,
+                Meta.KeyBindingFlags.NONE,
+                Shell.KeyBindingMode.NORMAL | Shell.KeyBindingMode.MESSAGE_TRAY,
+                key_bindings[key]
+            );
+        }
+        else {
+            global.display.add_keybinding(
+                key,
+                mySettings,
+                Meta.KeyBindingFlags.NONE,
+                key_bindings[key]
+            );
+        }
+        }
+
     Main.panel._rightBox.insert_child_at_index(button, 0);
 }
 
 function disable() {
-    Main.wm.removeKeybinding(KEY_SETTING_NAME);
+    let key;
+    for (key in key_bindings) {
+        if (Main.wm.removeKeybinding) { // introduced in 3.7.2
+            Main.wm.removeKeybinding(key);
+        }
+        else {
+            global.display.remove_keybinding(key);
+        }
+    }
+
     Main.panel._rightBox.remove_child(button);
 }
