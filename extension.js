@@ -14,7 +14,7 @@ const mySettings = Utils.getSettings();
 // Globals
 const key_bindings = {
     'key': function(){
-        _startTerminix();
+        _startTilix();
     }
 };
 
@@ -30,19 +30,19 @@ function init(extensionMeta) {
         track_hover: true
     });
     let icon = new St.Icon({
-        icon_name: 'com.gexperts.Terminix-symbolic',
+        icon_name: 'com.gexperts.Tilix-symbolic',
         style_class: 'system-status-icon'
     });
 
     button.set_child(icon);
-    button.connect('button-press-event', _startTerminix);
+    button.connect('button-press-event', _startTilix);
 }
 
-function _startTerminix() {
+function _startTilix() {
     try {
-        Main.Util.trySpawnCommandLine('terminix --quake');
+        Main.Util.trySpawnCommandLine('tilix --quake');
     } catch(err) {
-        Main.notify("Couldn't start terminix, is it installed?");
+        Main.notify("Couldn't start tilix, is it installed?");
     }
 }
 

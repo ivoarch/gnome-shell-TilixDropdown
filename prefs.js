@@ -9,7 +9,7 @@ const mySettings = Utils.getSettings();
 
 // Globals
 const pretty_names = {
-    'key': 'start terminix in quake mode'
+    'key': 'start tilix in quake mode'
 }
 
 function init() {

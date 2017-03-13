@@ -1,6 +1,6 @@
 {
-  "description": "Open Terminix in Quake mode .\n Add default keyboard shortcut (F10) .\n Easy way to change keyboard shortcut key via extension settings",
-  "name": "Terminix DropDown",
+  "description": "Open Tilix in Quake mode .\n Add default keyboard shortcut (F10) .\n Easy way to change keyboard shortcut key via extension settings",
+  "name": "Tilix DropDown",
   "shell-version": [
     "3.14",
     "3.16",
@@ -8,10 +8,8 @@
     "3.20",
     "3.22"
   ],
-  "url": "https://github.com/ivoarch/gnome-shell-TerminixDropdown",  
-  "uuid": "TerminixDropdown@ivkuzev@gmail.com",
-  "version": 3,
-  "settings-schema": "org.gnome.shell.extensions.terminix-dropdown"
+  "url": "https://github.com/ivoarch/gnome-shell-TilixDropdown",
+  "uuid": "TilixDropdown@ivkuzev@gmail.com",
+  "version": 4,
+  "settings-schema": "org.gnome.shell.extensions.tilix-dropdown"
 }
-
-
