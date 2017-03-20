@@ -18,7 +18,7 @@ The extension can be installed directly from source, either for the convenience 
 
 ```
 $ git clone https://github.com/ivoarch/gnome-shell-TilixDropdown.git
-$ mv gnome-shell-TerminixDropdown $HOME/.local/share/gnome-shell/extensions/TilixDropdown@ivkuzev@gmail.com
+$ mv gnome-shell-TilixDropdown $HOME/.local/share/gnome-shell/extensions/TilixDropdown@ivkuzev@gmail.com
 ```
 
 restart GNOME Shell (`Alt+F2 r Enter`) and enable the extension through gnome-tweak-tool.
