@@ -10,7 +10,7 @@ A GNOME Shell extension to open [Tilix](https://github.com/gnunn1/tilix) in [Qua
 
 Prerequisites: Tilix are installed.
 
-* **COMING SOON!** Install from [GNOME Shell extension website]()
+* Install from [GNOME Shell extension website](https://extensions.gnome.org/extension/1185/tilix-dropdown/)
 * Packages
   * Fedora - [COPR Repository](https://copr.fedorainfracloud.org/coprs/ivoarch/gnome-shell-extension-tilix-dropdown/)
   * CentOS 7.3 - [EPEL Package via COPR](https://copr.fedorainfracloud.org/coprs/ivoarch/gnome-shell-extension-tilix-dropdown/)
