@@ -4,7 +4,7 @@ A GNOME Shell extension to open [Tilix](https://github.com/gnunn1/tilix) in [Qua
 
 > Note that Terminix is changing it's name to Tilix due to a trademark issue with the Terminix International Corporation.
 
-![preview](http://storage6.static.itmages.ru/i/16/1015/h_1476546656_3841355_d9df0ea092.png)
+![preview](http://storage4.static.itmages.ru/i/17/0326/h_1490519899_2587125_7dfa21b7bc.png)
 
 ## Installation
 
