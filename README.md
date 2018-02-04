@@ -11,7 +11,7 @@ Prerequisites: Tilix are installed.
 * Install from [GNOME Shell extension website](https://extensions.gnome.org/extension/1185/tilix-dropdown/)
 * Packages
   * Fedora - [COPR Repository](https://copr.fedorainfracloud.org/coprs/ivoarch/gnome-shell-extension-tilix-dropdown/)
-  * CentOS 7.3 - [EPEL Package via COPR](https://copr.fedorainfracloud.org/coprs/ivoarch/gnome-shell-extension-tilix-dropdown/)
+  * CentOS 7.4 - [EPEL Package via COPR](https://copr.fedorainfracloud.org/coprs/ivoarch/gnome-shell-extension-tilix-dropdown/)
 * Source from git
   ```
   $ git clone https://github.com/ivoarch/gnome-shell-TilixDropdown.git ~/.local/share/gnome-shell/extensions/TilixDropdown@ivkuzev@gmail.com
