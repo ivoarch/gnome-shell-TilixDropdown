@@ -13,6 +13,6 @@
   ],
   "url": "https://github.com/ivoarch/gnome-shell-TilixDropdown",
   "uuid": "TilixDropdown@ivkuzev@gmail.com",
-  "version": 5.2,
+  "version": 5.3,
   "settings-schema": "org.gnome.shell.extensions.tilix-dropdown"
 }
