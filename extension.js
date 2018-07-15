@@ -40,7 +40,7 @@ function init(extensionMeta) {
 
 function _startTilix() {
     try {
-        Main.Util.trySpawnCommandLine('tilix --quake');
+        Main.Util.trySpawnCommandLine('env GDK_BACKEND=x11 tilix --quake');
     } catch(err) {
         Main.notify("Couldn't start tilix, is it installed?");
     }
