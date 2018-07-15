@@ -2,7 +2,7 @@
 
 A GNOME Shell extension to launch [Tilix](https://github.com/gnunn1/tilix) (previosly known as terminix) in [Quake Mode](https://github.com/gnunn1/tilix/wiki/Quake-Mode) . 
 
-![preview](http://storage4.static.itmages.ru/i/17/0326/h_1490519899_2587125_7dfa21b7bc.png)
+![preview](https://extensions.gnome.org/extension-data/screenshots/screenshot_1185_q80lMt6.png)
 
 ## Installation
 
