@@ -1,5 +1,6 @@
 {
-  "description": "Launch Tilix in Quake mode .\n Add default keyboard shortcut (F10) .\n Easy way to change keyboard shortcut key via extension settings .",
+  "description": "Launch Tilix in Quake mode .\n Add default keyboard shortcut (F10) .\n Easy way to change keyboard shortcut key via extension settings . \n Wayland support
+.",
   "name": "Tilix DropDown",
   "shell-version": [
     "3.14",
@@ -9,7 +10,8 @@
     "3.22",
     "3.24",
     "3.26",
-    "3.28"
+    "3.28",
+    "3.30"
   ],
   "url": "https://github.com/ivoarch/gnome-shell-TilixDropdown",
   "uuid": "TilixDropdown@ivkuzev@gmail.com",
