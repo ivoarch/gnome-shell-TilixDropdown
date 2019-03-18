@@ -2,6 +2,7 @@
 const Gio = imports.gi.Gio;
 const Lang = imports.lang;
 const Main = imports.ui.main;
+const Util = imports.misc.util;
 const Meta = imports.gi.Meta;
 const Shell = imports.gi.Shell;
 const St = imports.gi.St;
@@ -34,13 +35,14 @@ function init(extensionMeta) {
         style_class: 'system-status-icon'
     });
 
+
     button.set_child(icon);
     button.connect('button-press-event', _startTilix);
 }
 
 function _startTilix() {
     try {
-        Main.Util.trySpawnCommandLine('env GDK_BACKEND=x11 tilix --quake');
+        Util.trySpawnCommandLine('env GDK_BACKEND=x11 tilix --quake');
     } catch(err) {
         Main.notify("Couldn't start tilix, is it installed?");
     }
@@ -93,3 +95,4 @@ function disable() {
 
     Main.panel._rightBox.remove_child(button);
 }
+
