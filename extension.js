@@ -12,6 +12,9 @@ const Tweener = imports.ui.tweener;
 const Utils   = imports.misc.extensionUtils.getCurrentExtension().imports.utils;
 const mySettings = Utils.getSettings();
 
+// GLib import
+const GLib = imports.gi.GLib;
+
 // Globals
 const key_bindings = {
     'key': function(){
@@ -41,9 +44,8 @@ function init(extensionMeta) {
 }
 
 function _startTilix() {
-    try {
-        Util.trySpawnCommandLine('env GDK_BACKEND=x11 tilix --quake');
-    } catch(err) {
+    let s = GLib.spawn_command_line_async('env GDK_BACKEND=x11 tilix --quake');
+    if(s == false) {
         Main.notify("Couldn't start tilix, is it installed?");
     }
 }
