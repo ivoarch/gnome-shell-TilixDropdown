@@ -6,7 +6,7 @@ const Util = imports.misc.util;
 const Meta = imports.gi.Meta;
 const Shell = imports.gi.Shell;
 const St = imports.gi.St;
-const Tweener = imports.ui.tweener;
+const Tweener = imports.tweener.tweener;
 
 // Extension imports
 const Utils   = imports.misc.extensionUtils.getCurrentExtension().imports.utils;
@@ -29,8 +29,6 @@ function init(extensionMeta) {
         style_class: 'panel-button',
         reactive: true,
         can_focus: true,
-        x_fill: true,
-        y_fill: false,
         track_hover: true
     });
     let icon = new St.Icon({
