@@ -12,7 +12,8 @@
     "3.24", 
     "3.26", 
     "3.28",
-    "3.32"
+    "3.32",
+    "3.38"
   ], 
   "url": "https://github.com/ivoarch/gnome-shell-TilixDropdown", 
   "uuid": "TilixDropdown@ivkuzev@gmail.com", 
