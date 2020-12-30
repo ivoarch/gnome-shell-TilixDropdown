@@ -6,7 +6,6 @@ const Util = imports.misc.util;
 const Meta = imports.gi.Meta;
 const Shell = imports.gi.Shell;
 const St = imports.gi.St;
-const Tweener = imports.tweener.tweener;
 
 // Extension imports
 const Utils   = imports.misc.extensionUtils.getCurrentExtension().imports.utils;
