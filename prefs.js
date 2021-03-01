@@ -25,22 +25,16 @@ function buildPrefsWidget() {
         GObject.TYPE_INT
     ]);
 
-    log("Modal created.");
-
     let settings = Utils.getSettings();
 
     for (key in pretty_names) {
         append_hotkey(model, settings, key, pretty_names[key]);
     }
 
-    log("Added hotkeys to model");
-
     let treeview = new Gtk.TreeView({
         'expand': true,
         'model': model
-    });
-
-    log("TreeView created.");
+    });    
 
     let col;
     let cellrend;
@@ -56,9 +50,7 @@ function buildPrefsWidget() {
     col.add_attribute(cellrend, 'text', 1);
 
 
-    treeview.append_column(col);
-
-    log("Column one created.");
+    treeview.append_column(col);    
 
     cellrend = new Gtk.CellRendererAccel({
         'editable': true,
@@ -78,9 +70,7 @@ function buildPrefsWidget() {
 
         let name = model.get_value(iter, 0);
 
-        model.set(iter, [ 2, 3 ], [ mods, key ]);
-
-        log("Changing value for " + name + ": " + value);
+        model.set(iter, [ 2, 3 ], [ mods, key ]);        
 
         settings.set_strv(name, [value]);
     });
@@ -94,19 +84,14 @@ function buildPrefsWidget() {
     col.add_attribute(cellrend, 'accel-key', 3);
 
     treeview.append_column(col);
-
-    log("Column two created.");
+    
 
     let win = new Gtk.ScrolledWindow({
         'vexpand': true
     });
-    win.add(treeview);
-
-    log("ScrolledWindow created.");
+    win.add(treeview);    
 
     win.show_all();
-
-    log("Returning.");
 
     return win;
 }
