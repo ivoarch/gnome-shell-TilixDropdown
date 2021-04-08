@@ -8,7 +8,7 @@ A GNOME Shell extension to launch [Tilix](https://github.com/gnunn1/tilix) (prev
 
 Prerequisites: Tilix are installed.
 
-* Install from [GNOME Shell extension website](https://extensions.gnome.org/extension/1185/tilix-dropdown/)
+* Install from [GNOME Shell extension website (OUT OF DATE!)](https://extensions.gnome.org/extension/1185/tilix-dropdown/)
 * Source from git
   ```
   $ git clone https://github.com/ivoarch/gnome-shell-TilixDropdown.git ~/.local/share/gnome-shell/extensions/TilixDropdown@ivkuzev@gmail.com
