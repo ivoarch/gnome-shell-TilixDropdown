@@ -5,7 +5,6 @@ const Gtk = imports.gi.Gtk;
 
 // Extension imports
 const Utils = imports.misc.extensionUtils.getCurrentExtension().imports.utils;
-const mySettings = Utils.getSettings();
 
 // Globals
 const pretty_names = {
@@ -32,9 +31,8 @@ function buildPrefsWidget() {
     }
 
     let treeview = new Gtk.TreeView({
-        'expand': true,
         'model': model
-    });    
+    });
 
     let col;
     let cellrend;
@@ -50,7 +48,7 @@ function buildPrefsWidget() {
     col.add_attribute(cellrend, 'text', 1);
 
 
-    treeview.append_column(col);    
+    treeview.append_column(col);
 
     cellrend = new Gtk.CellRendererAccel({
         'editable': true,
@@ -59,9 +57,9 @@ function buildPrefsWidget() {
 
     cellrend.connect('accel-edited', function(rend, iter, key, mods) {
         let value = Gtk.accelerator_name(key, mods);
-        
+
         let success = false;
-        
+
         [success, iter] = model.get_iter_from_string(iter);
 
         if (!success) {
@@ -70,7 +68,7 @@ function buildPrefsWidget() {
 
         let name = model.get_value(iter, 0);
 
-        model.set(iter, [ 2, 3 ], [ mods, key ]);        
+        model.set(iter, [ 2, 3 ], [ mods, key ]);
 
         settings.set_strv(name, [value]);
     });
@@ -84,14 +82,12 @@ function buildPrefsWidget() {
     col.add_attribute(cellrend, 'accel-key', 3);
 
     treeview.append_column(col);
-    
+
 
     let win = new Gtk.ScrolledWindow({
         'vexpand': true
     });
-    win.add(treeview);    
-
-    win.show_all();
+    win.child = treeview;
 
     return win;
 }
