@@ -67,7 +67,6 @@ function buildPrefsWidget() {
         }
 
         let name = model.get_value(iter, 0);
-
         model.set(iter, [ 2, 3 ], [ mods, key ]);
 
         settings.set_strv(name, [value]);
@@ -93,9 +92,16 @@ function buildPrefsWidget() {
 }
 
 function append_hotkey(model, settings, name, pretty_name) {
-    let [key, mods] = Gtk.accelerator_parse(settings.get_strv(name)[0]);
+    let [status, key, mods] = Gtk.accelerator_parse(settings.get_strv(name)[0]);
+    // Gtk_accelerator_parse returns different element count between GTK 3 (2)
+    // and GTK 4 (3). When using GTK 3, "shifting" the returned values will set
+    // the proper values to key and mods variables
+    if (typeof mods == 'undefined') {
+        mods = key;
+        key = status;
+    }
 
-    let row = model.insert(10);
+    let row = model.insert(-1);
 
     model.set(row, [0, 1, 2, 3], [name, pretty_name, mods, key ]);
 }
